@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <title>Books</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav__container">
+            <img class="nav__logo" src="./assets/Library.svg" alt="" />
+            <ul class="nav__links">
+                <li class="nav__link">
+                    <a href="index.html">Home</a>
+                </li>
+            </ul>
+            <button class="btn__menu" onclick="openMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu__backdrop">
+                <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="menu__list">
+                    <li class="menu__links">
+                        <a href="#landing__page" class="menu__link" onclick="closeMenu()">Home</a>
+                    </li>
+                    <li class="menu__links">
+                        <a href="#features" class="menu__link" onclick="closeMenu()">Books</a>
+                    </li>
+                    <li class="menu__links">
+                        <a href="" class="menu__link no-cursor" onclick="closeMenu()">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="books">
+        <div class="container">
+            <div class="row">
+                <div class="header-filter">
+                    <h2 class="section__title">All <span class="purple">Books</span></h2>
+                    <select id="filter" onchange="filterBooks(event)">
+                        <option value="" disabled selected>Sort</option>
+                        <option value="LOW-TO-HIGH">price-low to high</option>
+                        <option value="HIGH-TO-LOW">price-high to low</option>
+                        <option value="RATING">ratings</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="booked booked__loading">
+        <i class="fas fa-spinner booked__loading--spinner"></i>
+    </div>
+</body>
+
+</html>
